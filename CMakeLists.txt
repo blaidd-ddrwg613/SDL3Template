@@ -43,7 +43,6 @@ include(${CMAKE_CURRENT_BINARY_DIR}/cmake/CPM.cmake)
 
 set(LIBS)
 
-
 ## Dependencies
 
 # ImGui
@@ -89,7 +88,11 @@ list(APPEND LIBS flecs::flecs)
 
 # SQLite
 CPMAddPackage("gh:SRombauts/SQLiteCpp#643b153")
+
 list(APPEND LIBS SQLiteCpp)
+
+CPMAddPackage("gh:libsdl-org/SDL_ttf#07e4d12")
+list(APPEND LIBS SDL3_ttf::SDL3_ttf)
 
 
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
